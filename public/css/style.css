@@ -216,7 +216,6 @@ li {
   font-size: 2.1rem;
   border: 0.2rem solid #f9004d;
   cursor: pointer;
-  z-index: 10;
   transition: all 0.5s ease;
 }
 .btn1:before,
