@@ -1,0 +1,825 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 10px;
+}
+/* ---------------------------------- Scrollbar Styling ---------------------------------------------- */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f9004d;
+  border-radius: 10px;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: #0b0c0e;
+  position: relative;
+  /* overflow-x: hidden; */
+}
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+/* ---------------------------------- Navbar section Styling ---------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12rem;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+/*------- Navbar scroll --------- */
+.navbar.new_nav {
+  background: #f9004d;
+  height: 7rem;
+}
+.navbar.new_nav .logo a {
+  font-size: 4.5rem;
+  color: #fff;
+}
+.navbar.new_nav .nav_menu li a {
+  font-size: 1.5rem;
+}
+.navbar.new_nav .nav_menu li a:hover:not(.active) {
+  color: #a8a2a2;
+}
+.navbar.new_nav .btn {
+  color: #fff;
+  border: 0.2rem solid #fff;
+}
+.navbar.new_nav .btn:hover {
+  color: #000;
+  background: #fff;
+}
+
+/* --------- Logo ------------- */
+.navbar .logo a {
+  color: #f9004d;
+  font-size: 5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+/*------- Navbar menu --------- */
+.nav_menu .menu_links {
+  display: inline-block;
+  margin: 0 25px;
+  position: relative;
+}
+.menu {
+  color: #fff;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.menu:hover:not(.active) {
+  color: #a8a2a2;
+}
+.menu.active {
+  color: #a8a2a2;
+}
+.menu.active::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #fff;
+  border-radius: 50%;
+}
+.menu.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.1rem;
+  background: #fff;
+  border-radius: 50%;
+}
+/*------- Navbar button --------- */
+.navbar .button {
+  cursor: pointer;
+  z-index: -1;
+}
+.button .btn {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: #f9004d;
+  border: 2px solid #f9004d;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+}
+.button .btn:hover {
+  background: #f9004d;
+  color: #fff;
+  font-weight: 600;
+}
+/*------- Hamburger button --------- */
+.ham {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  /* background: #f9004d; */
+  border-radius: 0.5rem;
+  display: none;
+  margin-right: -5rem;
+}
+.ham i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 3rem;
+}
+
+/* ---------------------------------- header section Styling ---------------------------------------------- */
+.header {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 10rem);
+  padding: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 9rem;
+}
+.header .intro {
+  color: #fff;
+  font-size: 5rem;
+}
+.header .intro .highlight {
+  background: #9715cf;
+  background: -webkit-linear-gradient(to right, #9715cf 0%, #cf0404 100%);
+  background: -moz-linear-gradient(to right, #9715cf 0%, #cf0404 100%);
+  background: linear-gradient(to right, #9715cf 0%, #cf0404 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header .desc {
+  color: #fff;
+  font-size: 2rem;
+}
+/*------- Avatar image --------- */
+.header .avatar {
+  width: 15rem;
+  height: 15rem;
+  margin-top: 2.5rem;
+}
+.header .avatar img {
+  width: 100%;
+}
+/*------- header section buttons --------- */
+.header .button {
+  margin-top: 7rem;
+}
+.btn1,
+.contact_btn {
+  color: #f9004d;
+  margin-right: 1rem;
+}
+.btn2,
+.about_btn {
+  color: #fff;
+}
+.btn1,
+.btn2,
+.contact_btn,
+.about_btn {
+  position: relative;
+  background: transparent;
+  padding: 1rem 2rem;
+  font-size: 2.1rem;
+  border: 0.2rem solid #f9004d;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+.btn1:before,
+.btn1:after,
+.btn2:before,
+.btn2:after,
+.contact_btn:before,
+.contact_btn:after,
+.about_btn:before,
+.about_btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #f9004d;
+  z-index: -1;
+}
+.btn1:before,
+.contact_btn:before {
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: left;
+}
+.btn1:hover:before,
+.contact_btn:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+.btn1:after,
+.contact_btn:after {
+  right: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+.btn1:hover::after,
+.contact_btn:hover:after {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+  transform-origin: left;
+}
+.btn2:before,
+.about_btn:before {
+  left: 0;
+  transform: scaleX(1);
+  transition: transform 0.5s;
+  transform-origin: left;
+}
+.btn2:hover:before,
+.about_btn:hover:before {
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+.btn2:after,
+.about_btn:after {
+  right: 0;
+  transform: scaleX(1);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+.btn2:hover::after,
+.about_btn:hover:after {
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: left;
+}
+.btn1:hover,
+.contact_btn:hover {
+  color: #fff;
+}
+.btn2:hover,
+.about_btn:hover {
+  color: #f9004d;
+}
+
+/*------- Social icons --------- */
+.header .socials {
+  position: absolute;
+  left: 5rem;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.header .socials a {
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+.header .socials a i {
+  font-size: 2rem;
+  color: #fff;
+}
+.header .socials a:hover {
+  transform: translateX(1rem);
+}
+/*------- Arrow icons --------- */
+.arrow_icon {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: #f9004d;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: none;
+  transition: all 0.5s ease;
+}
+.arrow_icon a {
+  color: #fff;
+  font-size: 2rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.arrow_icon.arrow_active {
+  display: block;
+}
+
+/* ---------------------------------- Project section Styling ---------------------------------------------- */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  padding-left: 4rem;
+}
+.heading {
+  font-size: 3rem;
+  color: #fff;
+  position: relative;
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #fff;
+  border-radius: 50%;
+}
+.heading::after {
+  content: "";
+  position: absolute;
+  bottom: -0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.1rem;
+  background: #fff;
+  border-radius: 50%;
+}
+span {
+  color: #f9004d;
+}
+.card_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  gap: 3rem;
+  padding: 3rem 2rem;
+  justify-content: center;
+}
+.card_wrapper {
+  position: relative;
+  width: 30rem;
+  height: 20rem;
+  border-radius: 1rem;
+  padding: 3rem 5rem;
+  background: linear-gradient(145deg, #070707, #050505);
+  margin-top: 10rem;
+  transition: all 0.3s ease;
+  box-shadow: -7px -7px 14px #0c0c0c, 7px 7px 14px #101010;
+}
+.card_wrapper:hover {
+  height: 35rem;
+  background: linear-gradient(145deg, #000000, #0e0e0e);
+}
+
+.project_img {
+  width: 100%;
+  height: 15rem;
+  transform: translateY(-8rem);
+}
+.project_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  z-index: 99;
+  transition: all 0.5s ease-in-out;
+}
+.project_img:hover img {
+  transform: scale(1.1);
+}
+.card_content {
+  padding: 0.5rem;
+  text-align: center;
+  transform: translateY(-10rem);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.card_content h2 {
+  color: #f9004d;
+  margin-bottom: 1.5rem;
+}
+.card_content p {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.card_content p {
+  line-height: 2rem;
+}
+.links a i {
+  font-size: 2rem;
+  color: #fff;
+  margin-right: 1.5rem;
+}
+.card_wrapper:hover .card_content {
+  transform: translateY(-5.5rem);
+  opacity: 1;
+}
+.container h1 span {
+  color: #f9004d;
+}
+
+/* ---------------------------------- Skills section Styling ---------------------------------------------- */
+.skill_container {
+  position: relative;
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  justify-content: center;
+  width: 80%;
+}
+.skill_card {
+  height: 20rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #464646;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.skill {
+  font-size: 2rem;
+  color: #464646;
+  line-height: 20rem;
+}
+.skill_card:hover {
+  background: var(--bg);
+}
+.skill_card:hover .skill {
+  color: #fff;
+}
+.skill_card.large {
+  grid-column: 2 span;
+}
+
+/* ---------------------------------- About section Styling ---------------------------------------------- */
+.about_container {
+  margin: 9rem 0 10rem;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-gap: 10rem;
+}
+.left_col {
+  width: 40rem;
+  height: 50rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.left_col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+.left_col:hover img {
+  transform: scale(1.1);
+}
+.right_col .about_para {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+/* ---------------------------------- Contact section Styling ---------------------------------------------- */
+.form_contact {
+  width: 80%;
+  margin-top: 5rem;
+  position: relative;
+}
+.form_contact input,
+textarea {
+  width: 100%;
+  display: block;
+  height: 5rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #f9004d;
+  border: none;
+  outline: none;
+  margin: 3rem 0;
+  resize: none;
+}
+textarea {
+  height: 20rem;
+}
+.form_contact .name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -3rem;
+}
+.name input {
+  width: 49%;
+}
+.contact_btn {
+  display: block;
+  margin: auto;
+  font-size: 2.3rem;
+}
+
+/* ---------------------------------- Footer section Styling ---------------------------------------------- */
+.footer p {
+  background: #f9004d;
+  color: #fff;
+  width: 100%;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+/* ---------------------------------- Media Queries ---------------------------------------------- */
+@media (max-width: 1200px) {
+  .left_col {
+    width: 35rem;
+    height: 45rem;
+  }
+  .left_col img {
+    object-fit: cover;
+  }
+  .right_col .about_para {
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+  }
+}
+
+@media (max-width: 1099px) {
+  .menu {
+    font-size: 1.5rem;
+  }
+  .left_col {
+    width: 30rem;
+    height: 40rem;
+  }
+  .left_col img {
+    object-fit: cover;
+  }
+  .right_col .about_para {
+    font-size: 1.3rem;
+    line-height: 3.3rem;
+  }
+}
+
+@media (max-width: 997px) {
+  .ham {
+    display: block;
+    z-index: 100;
+  }
+  .lock_scroll{
+    overflow: hidden;
+  }
+  .ham i {
+    color: #fff;
+  }
+  .navbar .nav_menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    min-width: 35rem;
+    left: -100%;
+    top: 0;
+    background: #f9004d;
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.5s ease;
+  }
+  .navbar .nav_menu.toggle {
+    left: 0;
+  }
+  .nav_menu .menu_links {
+    display: block;
+    margin: 3rem;
+  }
+  .navbar .button {
+    position: fixed;
+    left: -100%;
+    bottom: 15rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    z-index: 100;
+  }
+  .navbar .button.toggle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .navbar .button .btn {
+    background: #fff;
+    color: #f9004d;
+    border: 0.2rem solid #fff;
+  }
+  .navbar .button .btn:hover {
+    background: transparent;
+    color: #fff;
+  }
+  .header {
+    z-index: 1;
+  }
+  .skill_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skill_card.large {
+    grid-column: 1 span;
+  }
+  .skill_card:last-child {
+    grid-column: 2 span;
+  }
+  .about_container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .left_col {
+    display: block;
+    margin: auto;
+  }
+  .form_contact .name {
+    flex-direction: column;
+  }
+  .name input {
+    width: 100%;
+  }
+  .name .first_name {
+    margin-bottom: 0;
+  }
+  .header .intro {
+    font-size: 4rem;
+    /* margin-top: -10rem; */
+  }
+  .header .desc {
+    font-size: 1.5rem;
+  }
+  .header .socials{
+    bottom: 15rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .header .intro {
+    font-size: 3rem;
+  }
+  .header .desc {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .header{
+    padding: 10rem;
+    height: 100vh;
+  }
+  .navbar .logo a {
+    font-size: 4rem;
+    margin-left: -5rem;
+  }
+  .header .intro {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-top: -10rem;
+  }
+  .header .desc {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .header .avatar {
+    width: 15rem;
+    height: 15rem;
+  }
+  .socials {
+    top: 20rem;
+  }
+  .btn1,
+  .btn2,
+  .contact_btn,
+  .about_btn {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+  }
+  .about_container {
+    width: 90%;
+  }
+  .left_col {
+    width: 20rem;
+    height: 25rem;
+  }
+  .left_col img {
+    object-fit: cover;
+  }
+  .right_col .about_para {
+    font-size: 1rem;
+    line-height: 2.5rem;
+    margin-top: -5rem;
+  }
+  .skill_container {
+    grid-template-columns: repeat(1fr);
+  }
+  .skill_card {
+    grid-column: 2 span !important;
+  }
+  .form_contact {
+    width: 90%;
+  }
+  .footer p {
+    font-size: 1rem;
+  }
+  .ham i {
+    font-size: 2rem;
+    right: 3rem;
+  }
+}
+
+@media (max-width: 505px){
+  .logo, .socials{
+    margin-left: -2rem;
+  } 
+  .header{
+    padding: 3rem;
+  }
+  .header .intro {
+    font-size: 2.8rem;
+  }
+  .header .avatar {
+    width: 13rem;
+    height: 13rem;
+  }
+  .btn1,
+  .btn2,
+  .contact_btn,
+  .about_btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+  }
+  .container{
+    padding: 3rem;
+  } 
+  /* .navbar .nav_menu{
+    width: 100%;
+    height: 70rem;
+  }
+  .navbar .button{
+    bottom: 10rem;
+  } */
+}  
+
+@media (max-width: 420px){
+  .ham{
+    margin-right: -75px;
+  }
+  .header .intro{
+    font-size: 2.5rem;
+    margin-top: -20rem;
+  }
+}
+
+
+/* ---------------------------------- Preloader Styling ---------------------------------------------- */
+#preloader {
+  background: #080705 url(/images/preloader.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
