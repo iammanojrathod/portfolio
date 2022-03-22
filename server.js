@@ -11,7 +11,7 @@ let app = express();
 app.use(express.static(initialPath));
 app.use(express.json());
 app.use(cors({
-    origin: "https://127.0.0.1:5500",
+    origin: "http://localhost:3000/",
 }));
 
 app.get('/', (req, res) => {
