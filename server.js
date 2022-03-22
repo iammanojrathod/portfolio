@@ -10,7 +10,9 @@ let app = express();
 
 app.use(express.static(initialPath));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "*",
+}));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(initialPath, "index.html"))
