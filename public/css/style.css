@@ -27,7 +27,6 @@ body {
   scroll-behavior: smooth;
   background-color: #0b0c0e;
   position: relative;
-  /* overflow-x: hidden; */
 }
 a,
 li {
@@ -123,6 +122,7 @@ li {
 .navbar .button {
   cursor: pointer;
   z-index: -1;
+  display: none;
 }
 .button .btn {
   padding: 1rem 2rem;
@@ -146,6 +146,7 @@ li {
   border-radius: 0.5rem;
   display: none;
   margin-right: -5rem;
+  cursor: pointer;
 }
 .ham i {
   position: absolute;
@@ -394,7 +395,7 @@ span {
   width: 30rem;
   height: 20rem;
   border-radius: 1rem;
-  padding: 3rem 5rem;
+  padding: 3rem;
   background: linear-gradient(145deg, #070707, #050505);
   margin-top: 10rem;
   transition: all 0.3s ease;
@@ -435,9 +436,8 @@ span {
 .card_content p {
   color: #fff;
   margin-bottom: 1.5rem;
-}
-.card_content p {
   line-height: 2rem;
+  font-size: 1.2rem;
 }
 .links a i {
   font-size: 2rem;
@@ -793,13 +793,6 @@ textarea {
   .container{
     padding: 3rem;
   } 
-  /* .navbar .nav_menu{
-    width: 100%;
-    height: 70rem;
-  }
-  .navbar .button{
-    bottom: 10rem;
-  } */
 }  
 
 @media (max-width: 420px){
@@ -811,7 +804,6 @@ textarea {
     margin-top: -20rem;
   }
 }
-
 
 /* ---------------------------------- Preloader Styling ---------------------------------------------- */
 #preloader {

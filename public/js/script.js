@@ -65,7 +65,6 @@ arrow.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-
 // Contact form -----------------------------
 const contactBtn = document.querySelector(".contact_btn");
 const fname = document.querySelector(".first_name");
@@ -74,8 +73,14 @@ const email = document.querySelector(".email");
 const message = document.querySelector(".message");
 
 contactBtn.addEventListener("click", () => {
-
   if (
+    fname.value.length === 0 &&
+    lname.value.length === 0 &&
+    email.value.length === 0 &&
+    message.value.length === 0
+  ) {
+    alert("⚠ Please fill the all fields");
+  } else if (
     fname.value.length &&
     lname.value.length &&
     email.value.length &&
@@ -94,17 +99,10 @@ contactBtn.addEventListener("click", () => {
       .then((res) => res.json())
       .then((data) => alert(data))
       .catch((err) => console.log(err));
-  } else if(fname.value.length === 0 &&
-    lname.value.length === 0 &&
-    email.value.length === 0 &&
-    message.value.length === 0
-    ) {
-      alert("⚠ Please fill the all fields");
-    }
+  }
 
-  fname.value = "";
-  lname.value = "";
-  email.value = "";
-  message.value = "";
+  // fname.value = "";
+  // lname.value = "";
+  // email.value = "";
+  // message.value = "";
 });
-
